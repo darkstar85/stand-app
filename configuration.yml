@@ -1,0 +1,19 @@
+message: Buckle up!
+
+http:
+  port: 9000
+  adminPort: 9001
+  
+mongoDBConfiguration:
+  host: localhost
+  port: 27017
+  db: standApp
+
+logging:
+  file:
+    enabled: false
+    threshold: ALL
+    currentLogFilename: /logs/dropwizard/standApp.log
+    archivedLogFilenamePattern: /logs/dropwizard/standApp-%d.log.gz
+    archivedFileCount: 5
+    timeZone: UTC

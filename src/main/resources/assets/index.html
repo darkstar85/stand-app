@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+<head>
+    <title>StandApp</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css"/>
+    <script type="text/javascript" src="/assets/js/angular.js"></script>
+    <script type="text/javascript" src="/assets/js/notes.js"></script>
+</head>
+<body>
+<div ng-controller="NotesFormCtrl">
+    <form ng-submit="addNote()">
+        <legend>Create Note</legend>
+        <label>Subject</label>
+        <input type="text" name="subject" ng-model="note.subject" placeholder="Subject">
+        <label>Text</label>
+        <input type="text" name="text" ng-model="note.text" placeholder="Text">
+        <button type="submit">Add</button>
+    </form>
+</div>
+<div ng-controller="NotesCtrl" data-ng-init="getNotes()">
+    <div class="noteContent" ng-repeat="note in notes">
+        <ul>
+            <li>{{note.created | date:'yyyy-MM-dd HH:mm:ss Z'}}</li>
+            <li>{{note.subject}}</li>
+            <li>{{note.text}}</li>
+            <li><a href="#" ng-click="delete(note.id)">delete</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

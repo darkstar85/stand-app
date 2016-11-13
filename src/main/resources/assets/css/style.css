@@ -1,0 +1,28 @@
+form {
+    padding-bottom: 50px;
+}
+
+.noteContent {
+    line-height: 2;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.noteContent:nth-child(odd) {
+    background-color: ghostwhite;
+}
+
+.noteContent ul {
+    margin: auto;
+    padding: 0;
+    display: block;
+    list-style: none;
+}
+
+.noteContent ul li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 20%;
+}

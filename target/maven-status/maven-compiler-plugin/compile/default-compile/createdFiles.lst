@@ -1,0 +1,10 @@
+com/example/notes/health/MongoManaged.class
+com/example/notes/resources/NotesResource.class
+com/example/notes/core/service/NoteService.class
+com/example/notes/health/MongoHealthCheck.class
+com/example/notes/config/MongoDBConfiguration.class
+com/example/notes/mdb/NoteDao.class
+com/example/notes/api/NoteJson.class
+com/example/notes/NotesApplication.class
+com/example/notes/config/NotesApplicationConfiguration.class
+com/example/notes/core/model/Note.class
