@@ -21,7 +21,28 @@ var Note = React.createClass({
         this.setState({ editing: true });
     },
     save: function () {
-        this.props.onChange(this.refs.newText.getDOMNode().value, this.props.index);
+        var context = this;
+        var noteText = this.refs.newText.getDOMNode().value;
+        var index = this.props.index;
+
+        var data = {
+            subject: index,
+            text: noteText
+        };
+
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "POST",
+            url: "/notes/addnote",
+            data: JSON.stringify(data),
+            success: function(result) {
+                context.props.onChange(noteText, index);
+            }
+        });
+
         this.setState({ editing: false });
     },
     remove: function () {
@@ -119,7 +140,7 @@ var Board = React.createClass({
     eachNote: function (note, i) {
         return React.createElement(
             Note,
-            { key: note.id,
+            {   key: note.id,
                 index: i,
                 onChange: this.update,
                 onRemove: this.remove

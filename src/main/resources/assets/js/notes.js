@@ -3,6 +3,7 @@ var app = angular.module('notesApp', []);
 app.controller('NotesFormCtrl', function ($scope, $http) {
     $scope.note = {};
     $scope.addNote = function () {
+    console.log($scope.note)
         $http({
             method: 'POST',
             url: '/notes/addnote',
