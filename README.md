@@ -1,7 +1,7 @@
 Stand-app
 =========
 
-Simple Dropwizard standup application with ReactJS and MongoDB
+Simple Dropwizard microservice standup application with ReactJS and MongoDB
 
 
 ### 1. Build the jar
